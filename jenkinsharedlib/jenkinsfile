@@ -1,0 +1,17 @@
+@library('shared-library')
+
+pipeline{
+	agent any
+	stages{
+		stage('task2'){
+			steps{
+				script{
+				build('Clean')
+				build('Compile')
+				build('Test')
+				build('Install')
+				}
+			}
+		}
+	}
+}
